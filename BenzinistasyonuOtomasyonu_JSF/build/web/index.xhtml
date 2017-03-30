@@ -1,0 +1,46 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>Ana sayfa</title>
+        <meta charset="utf-8"/>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"/>
+        <!-- Css i indirip kullanmak için (hatalı)
+        <link href="../src/main/resources/css/bootstrap.css" rel="stylesheet" type="text/css"/>
+        <h:outputStylesheet name="css/bootstrap.css" library="css" />
+        -->
+    </h:head>
+    <h:body>
+         <h:form id="form">
+            <div class="row">
+            <div class="col-md-4">
+            </div>
+            <div class="col-md-4">
+                <div class="media" style="margin-top:50px"  >
+                    <img src="https://www.otopark.com/wp-content/uploads/2016/01/Total-logo.png" alt="logo"  height="312px" width="384px"/>
+                </div>
+                <div style="margin-top:50px">
+                    <form class="form-signin">
+                        <h2 class="form-signin-heading">Giriş Yapınız</h2>
+                        <label for="inputEmail" class="sr-only">Email address</label>
+                        <h:inputText id="id" required="true" class="form-control" requiredMessage="id giriniz" value="#{user.id}" />
+                        <label for="inputPassword" class="sr-only">Password</label>
+                        <h:inputSecret id="password" required="true" class="form-control" requiredMessage="sifre giriniz" value="#{user.password}"/>
+                        <div class="checkbox">
+                            <label>
+                                <input type="checkbox" value="remember-me"></input> Beni Hatırla
+                            </label>
+                        </div>
+                        <h:commandButton value="Giris" type="submit" class="btn btn-lg btn-primary btn-block" action="#{user.giris}" />
+                    </form>
+                </div>
+            </div>
+            <div class="col-md-3">
+            </div>
+            </div>
+        </h:form>
+    </h:body>
+</html>
+

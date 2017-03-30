@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <head>
+        <title>TODO supply a title</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    </head>
+    <h:body>
+         <h1>Hello from Facelets</h1>
+         <h:form id="form">
+             <h:dataTable id="table1" value="#{user.cal}" var="calisan" border="1">
+                <f:facet name="header">
+                   <h:outputText value="Your Shopping Cart" />
+                </f:facet>
+                <h:column>
+                   <f:facet name="header">
+                       <h:outputText value="Id" />
+                   </f:facet>
+                    <h:outputText value="#{calisan.id}" />
+                </h:column>
+                <h:column>
+                   <f:facet name="header">
+                       <h:outputText value="Ad" />
+                   </f:facet>
+                   <h:outputText value="#{calisan.ad}" />
+                 </h:column>
+                 <h:column>
+                   <f:facet name="header">
+                       <h:outputText value="Soyad" />
+                   </f:facet>
+                     <h:outputText value="#{calisan.soyad}" />
+                 </h:column>
+                 <h:column>
+                   <f:facet name="header">
+                       <h:outputText value="Is" />
+                   </f:facet>
+                     <h:outputText value="#{calisan.isi}" />
+               </h:column>
+                 <h:column>
+                   <f:facet name="header">
+                       <h:outputText value="Maas" />
+                   </f:facet>
+                     <h:outputText value="#{calisan.maas}" />
+               </h:column>
+           </h:dataTable>
+             
+            <h:panelGrid id="panel" columns="2" border="2" cellpadding="10" cellspacing="1">
+                <h:outputText value="Silinecek calisanin id :"/>
+                <h:inputText id="calisan_id" required="true" requiredMessage="plaka giriniz" value="#{user.eklenecek_id}"/>
+                <h:commandButton value="Calisan sil"  action="#{user.calisan_kov2()}" />
+                <h:outputLink value="index.xhtml">Ana Sayfa</h:outputLink>
+            </h:panelGrid>
+        </h:form>
+    </h:body>
+</html>

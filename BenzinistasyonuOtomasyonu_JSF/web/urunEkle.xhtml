@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html">
+    <head>
+        <title>TODO supply a title</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    </head>
+    <h:body>
+         <h1>Hello from Facelets</h1>
+         <h:form id="form">
+            <h:panelGrid id="panel" columns="2" border="2" cellpadding="10" cellspacing="1">
+                <h:outputText value="Urun id :" />
+                <h:inputText id="idd" required="true" requiredMessage="ad giriniz" value="#{user.eklenecek_id}" />
+                <h:outputText value="Urun adi :"/>
+                <h:inputText id="ad" required="true" requiredMessage="soyad giriniz" value="#{user.musteri_adi}"/>
+                <h:outputText value="Fiyat :"/>
+                <h:inputText id="fiyat" required="true" requiredMessage="sifre giriniz" value="#{user.fiyat}"/>
+                <h:commandButton value="Urun ekle"  action="#{user.urun_Ekle()}" />
+                <h:outputLink value="index.xhtml">Ana Sayfa</h:outputLink>
+            </h:panelGrid>
+        </h:form>
+    </h:body>
+</html>
